@@ -40,8 +40,7 @@ class NavbarContainer extends Component {
               </>
             :
               <>
-                {/* <Nav.Link href='<ProfileContainer />'>Profile</Nav.Link> */}
-                <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                <NavLink className="nav-link" to="/profile"><button>Profile</button></NavLink>
                 <button onClick={this.props.logout}>Logout</button>
               </>
             }

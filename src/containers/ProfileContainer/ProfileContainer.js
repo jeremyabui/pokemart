@@ -23,6 +23,23 @@ class ProfileContainer extends React.Component {
     .catch(err => console.log(err));
   }
 
+  handleUpdate = (event, updatedState) => {
+    event.preventDefault();
+    const userId = localStorage.getItem('uid');
+    const data = new FormData();
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
+      updatedState, 
+      {
+        withCredentials: true
+      })
+      .then(res => {
+        this.setState({
+          profile: res.data.data
+        });
+      })
+    }
+  
+
   render() {
     return (
       <>
