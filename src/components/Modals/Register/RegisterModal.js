@@ -43,6 +43,22 @@ function RegisterModal(props) {
                 <label htmlFor="password2">Confirm Password</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={props.user.password2} />
               </div>
+              <div className="form-group">
+                <label htmlFor="address">Address</label>
+                <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="address" name="address" value={props.user.address} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="city">City</label>
+                <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="city" name="city" value={props.user.city} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="state">State</label>
+                <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="state" name="state" value={props.user.state} />
+              </div>
+              {/* <div className="form-group">
+                <label htmlFor="zipcode">Zipcode</label>
+                <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="zipcode" name="zipcode" value={props.user.zipcode} />
+              </div> */}
               <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button>
             </form>
           </div>

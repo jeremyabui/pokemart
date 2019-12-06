@@ -9,6 +9,10 @@ class Register extends React.Component {
     email: '',
     password: '',
     password2: '',
+    address: '',
+    city: '',
+    state: '',
+    zipcode: '',
   };
 
   handleChange = (event) => {
