@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import DeleteUser from '../Modals/DeleteUser/DeleteUser'
+
 class Profile extends React.Component {
 
   handleChange = (event) => {
@@ -20,6 +22,7 @@ class Profile extends React.Component {
           <h5>City: {this.props.profile.city}</h5>
           <h5>State: {this.props.profile.state}</h5>
           <Link to='/editprofile'>Edit Profile</Link>
+          <DeleteUser />
         </div>
       </>
     )
