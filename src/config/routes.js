@@ -19,6 +19,6 @@ export default ({ currentUser, setCurrentUser }) => (
       )}
     />
     
-    <Route path='/profile' component={ProfileContainer} />
+    <Route path="/profile" component={ProfileContainer} />
   </Switch>
 )

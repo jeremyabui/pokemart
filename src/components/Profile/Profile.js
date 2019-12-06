@@ -5,7 +5,7 @@ const Profile = props => {
   return (
     <>
       <div className="profileInfo">
-        <h3>Welcome</h3>
+        <h3>Reached profile where details should post</h3>
       </div>
     </>
   )

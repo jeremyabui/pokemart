@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import ProfileContainer from '../../containers/ProfileContainer/ProfileContainer'
 // CSS
 import './Navbar.css'
 
@@ -39,6 +40,8 @@ class NavbarContainer extends Component {
               </>
             :
               <>
+                {/* <Nav.Link href='<ProfileContainer />'>Profile</Nav.Link> */}
+                <NavLink className="nav-link" to="/profile">Profile</NavLink>
                 <button onClick={this.props.logout}>Logout</button>
               </>
             }
