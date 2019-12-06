@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 import LoginModal from './LoginModal';
@@ -23,6 +24,8 @@ class Login extends React.Component {
     })
       .then((res) => {
         console.log(res);
+        this.props.setCurrentUser(res.data.data)
+        this.props.history.push('/')
       })
       .catch((err) => console.log(err));
   };
@@ -34,4 +37,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

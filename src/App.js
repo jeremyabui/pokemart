@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import axios from 'axios';
 
 // Internal Modules
-import Routes from './config/routes';
+// import Routes from './config/routes';
 import NavbarContainer from './components/Navbar/Navbar';
 // import Navbar from './components/Navbar/Navbar'
 
@@ -43,7 +43,8 @@ class App extends Component {
     return (
       <>
         <NavbarContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Home />
+        {/* <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} /> */}
       </>
     );
   }
