@@ -4,6 +4,9 @@ import { Link, NavLink} from 'react-router-dom';
 import Register from '../Modals/Register/Register';
 import Login from '../Modals/Login/Login';
 
+// CSS
+import './Navbar.css'
+
 // NOTE uncomment out once set up
 class Navbar  extends Component {
   render () {
@@ -19,13 +22,13 @@ class Navbar  extends Component {
               <ul className="navbar-nav ml-auto">
                 {/* {!this.props.currentUser ?  */}
                 <>
+                  <li className="nav-item" id='login-button'>
+                    {/* <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink> */}
+                    <Login />
+                  </li>
                   <li className="nav-item" id='register-button'>
                     <Register />
                     {/* <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink> */}
-                  </li>
-                  <li>
-                  {/* <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink> */}
-                    <Login />
                   </li>
                 </> 
                 {/* : 

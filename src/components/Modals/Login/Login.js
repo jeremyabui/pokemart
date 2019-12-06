@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-import LoginModal from './RegisterModal';
+import LoginModal from './LoginModal';
 
 class Login extends React.Component {
   state = {
