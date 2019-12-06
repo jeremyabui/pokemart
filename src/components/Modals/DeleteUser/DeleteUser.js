@@ -12,6 +12,7 @@ class DeleteUser extends React.Component {
       .then((res) => {
         console.log(res)
         this.props.history.push('/')
+        // this.props.logout()
       })
       .catch((err)=> console.log(err));
   }

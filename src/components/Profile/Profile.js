@@ -21,8 +21,9 @@ class Profile extends React.Component {
           <h5>Address: {this.props.profile.address}</h5>
           <h5>City: {this.props.profile.city}</h5>
           <h5>State: {this.props.profile.state}</h5>
+          <h5>Zipcode: {this.props.profile.zipcode}</h5>
           <Link to='/editprofile'>Edit Profile</Link>
-          <DeleteUser />
+          <DeleteUser logout={this.props.logout}/>
         </div>
       </>
     )

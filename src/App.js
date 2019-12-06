@@ -44,7 +44,7 @@ class App extends Component {
       <>
         <NavbarContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
         {/* <Home /> */}
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
       </>
     );
   }

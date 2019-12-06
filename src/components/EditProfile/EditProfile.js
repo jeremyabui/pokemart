@@ -11,7 +11,7 @@ class UpdateProfile extends React.Component {
   state = {
     name: '',
     password: '',
-    // password2: '',
+    password2: '',
     address: '',
     city: '',
     state: '',
@@ -24,35 +24,38 @@ class UpdateProfile extends React.Component {
     })
   }
 
-  handleUpdate = (event, updatedState) => {
-    event.preventDefault();
-    const userId = localStorage.getItem('uid');
-    // const data = new FormData();
-    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
-      updatedState, 
-      {
-        withCredentials: true
-      })
-      .then(res => {
-        this.setState({
-          profile: res.data.data
-        });
-      })
-      .catch(err => console.log(err));
-    }
-
-  // handleUpdate = (event) => {
+  // handleUpdate = (event, updatedState) => {
   //   event.preventDefault();
   //   const userId = localStorage.getItem('uid');
-  //   let newObj = Object.assign({}, this.state);
-  //   axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, newObj, {
-  //     withCredentials: true,
-  //   })
-  //     .then((res) => {
-  //       this.props.setCurrentUser(res.data.data)
+  //   // const data = new FormData();
+  //   axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
+  //     updatedState, 
+  //     {
+  //       withCredentials: true
   //     })
-  //     .catch((err) => console.log(err));
-  // }
+  //     .then(res => {
+  //       console.log(res)
+  //       this.setState({
+  //         profile: res.data.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+  //   }
+
+  handleUpdate = (event) => {
+    event.preventDefault();
+    const userId = localStorage.getItem('uid');
+    let newObj = Object.assign({}, this.state);
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, newObj, {
+      withCredentials: true,
+    })
+      .then((res) => {
+        // this.props.setCurrentUser(res.data.data)
+        console.log(res)
+        this.props.history.push('/profile');
+      })
+      .catch((err) => console.log(err));
+  }
 
 // Regular bootstrap
   render () {
@@ -67,10 +70,10 @@ class UpdateProfile extends React.Component {
             <label htmlFor="password">Password</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={this.state.password} />
           </div>
-          {/* <div className="form-group">
+          <div className="form-group">
             <label htmlFor="password2"> Confirm Password</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={this.state.password2} />
-          </div> */}
+          </div>
           <div className="form-group">
             <label htmlFor="address">Address</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="address" name="address" value={this.state.address} />
@@ -78,6 +81,10 @@ class UpdateProfile extends React.Component {
           <div className="form-group">
             <label htmlFor="city">City</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="city" name="city" value={this.state.city} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="state">State</label>
+            <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="state" name="state" value={this.state.state} />
           </div>
           <div className="form-group">
             <label htmlFor="zipcode">Zipcode</label>
