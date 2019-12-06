@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, NavLink} from 'react-router-dom';
-import Register from '../Modals/Register/Register'
+
+import Register from '../Modals/Register/Register';
+import Login from '../Modals/Login/Login';
 
 // NOTE uncomment out once set up
 class Navbar  extends Component {
@@ -22,7 +24,8 @@ class Navbar  extends Component {
                     {/* <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink> */}
                   </li>
                   <li>
-                  <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
+                  {/* <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink> */}
+                    <Login />
                   </li>
                 </> 
                 {/* : 
