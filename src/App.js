@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 // import { withRouter } from 'react-router-dom'
+import axios from 'axios';
 
 // Internal Modules
+import Routes from './config/routes';
+import NavbarContainer from './components/Navbar/Navbar';
 // import Navbar from './components/Navbar/Navbar'
 
 // CSS
 import './App.css';
-import NavbarComponent from './components/Navbar/Navbar';
 
+import Home from './components/Home/Home'
+import ProfileContainer from './containers/ProfileContainer/ProfileContainer'
 
 // Axios
 // import axios from 'axios';
@@ -22,15 +27,26 @@ class App extends Component {
     localStorage.setItem('uid', userId);
   };
 
-
+  logout = () => {
+    axios.delete(`${process.env.REACT_APP_API_URL}/auth/logout`, {
+      withCredentials: true
+    })
+      .then(res => {
+        localStorage.removeItem('uid');
+        this.setState({ currentUser: null });
+        this.props.history.push('/');
+    })
+      .catch(err => console.log(err))
+  }
 
   render() {
     return (
       <>
-        <NavbarComponent />
+        <NavbarContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

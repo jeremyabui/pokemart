@@ -13,7 +13,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import './Navbar.css'
 
 // NOTE uncomment out once set up
-class NavbarComponent  extends Component {
+class NavbarContainer  extends Component {
   render () {
     return (
       <header>
@@ -68,8 +68,17 @@ class NavbarComponent  extends Component {
       {/* <Nav.Link href="#home">Home</Nav.Link> */}
       {/* <Nav.Link href="#features">Login</Nav.Link> */}
       {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-      <Login />
-      <Register />
+
+      {!this.props.currentUser ? 
+        <>
+          <Login />
+          <Register />
+        </>
+        :
+        <>
+          <button onClick={this.props.logout}>Logout</button>
+        </>
+      }
     </Nav>
     
   </Navbar>
@@ -80,4 +89,4 @@ class NavbarComponent  extends Component {
   };
 };
 
-export default NavbarComponent;
+export default NavbarContainer;

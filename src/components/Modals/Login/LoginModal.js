@@ -12,7 +12,7 @@ function LoginModal(props) {
 
   return(
     <>
-      <Button class='loginModal' variant="warning" onClick={handleShow}>
+      <Button className='loginModal' variant="warning" onClick={handleShow}>
         Login
       </Button>
 
