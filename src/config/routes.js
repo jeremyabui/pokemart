@@ -6,6 +6,7 @@ import Home from '../components/Home/Home'
 import Register from '../components/Modals/Register/Register'
 import Login from '../components/Modals/Login/Login'
 import ProfileContainer from '../containers/ProfileContainer/ProfileContainer'
+import EditProfile from '../components/EditProfile/EditProfile'
 
 
 export default ({ currentUser, setCurrentUser }) => (
@@ -20,5 +21,6 @@ export default ({ currentUser, setCurrentUser }) => (
     />
     
     <Route path="/profile" component={ProfileContainer} />
+    <Route path="/editprofile" component={EditProfile} />
   </Switch>
 )

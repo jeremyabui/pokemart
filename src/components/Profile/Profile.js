@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from 'react-bootstrap/NavLink';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
 
@@ -17,6 +17,9 @@ class Profile extends React.Component {
           <h3> Welcome {this.props.profile.name}</h3>
           <h5>Name: {this.props.profile.name}</h5>
           <h5>Address: {this.props.profile.address}</h5>
+          <h5>City: {this.props.profile.city}</h5>
+          <h5>State: {this.props.profile.state}</h5>
+          <Link to='/editprofile'>Edit Profile</Link>
         </div>
       </>
     )
