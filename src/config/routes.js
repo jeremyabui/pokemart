@@ -7,6 +7,7 @@ import Register from '../components/Modals/Register/Register'
 import Login from '../components/Modals/Login/Login'
 import ProfileContainer from '../containers/ProfileContainer/ProfileContainer'
 import EditProfile from '../components/EditProfile/EditProfile'
+import MallContainer from '../containers/MallContainer/MallContainer'
 
 
 export default ({ currentUser, setCurrentUser }) => (
@@ -22,5 +23,8 @@ export default ({ currentUser, setCurrentUser }) => (
     
     <Route path="/profile" component={ProfileContainer} />
     <Route path="/editprofile" component={EditProfile} />
+
+
+    <Route path="/mall" component={MallContainer} />
   </Switch>
 )
