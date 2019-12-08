@@ -30,7 +30,7 @@ export default ({ currentUser, setCurrentUser }) => (
 
     <Route exact path="/mall" component={MallContainer} />
 
-    <Route path='/mall/:id' component={ProductDetails} />
+    <Route path='/mall/:id' component={ProductDetails} currentUser={currentUser}/>
 
   </Switch>
 )

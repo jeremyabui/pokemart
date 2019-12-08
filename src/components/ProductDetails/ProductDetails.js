@@ -18,12 +18,13 @@ class ProductDetails extends React.Component{
   state= {
     productData: [],
     loaded: false,
+    productId: {"shoppingCart": [document.location.href.split('/')[4]]},
   }
 
   componentDidMount() {
     const productId = document.location.href.split('/')[4];
-    console.log(productId)
-    axios.get(`${process.env.REACT_APP_API_URL}/products/5de815a8805f6907d6c677b0`, { 
+    console.log(this.state.productId)
+    axios.get(`${process.env.REACT_APP_API_URL}/products/${productId}`, { 
       withCredentials: true
     })
       .then((res) => {
@@ -36,12 +37,30 @@ class ProductDetails extends React.Component{
       .catch((err) => console.log(err));
   };
 
+  addToCart = (event) => {
+    event.preventDefault();
+    const productId = document.location.href.split('/')[4];
+    // let newObj = Object.assign({}, this.state.productId).then(console.log(newObj))
+    const userId = localStorage.getItem('uid');
+    
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, this.state.productId, {
+      withCredentials: true
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => console.log(err));
+  }
+
   render() {
     return (
       <div className='container'>
         <h2>Product Details page</h2> 
         <h3>{this.state.productData.name}</h3> 
         <img src={this.state.productData.image} />
+        <p>{this.state.productData.description}</p>
+        <p>${this.state.productData.price}</p>
+        <button onClick={(event) => this.addToCart(event) }>Add to Cart</button>
         
     {/* {this.state.productData && <ProductDetail productData={this.state.productData} /> } */}
       </div>
