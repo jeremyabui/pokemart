@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Categories from '../../components/Categories/Categories'
+import Product from '../../components/Product/Product';
 
 class MallContainer extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class MallContainer extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/v1/products`, {
+    axios.get(`${process.env.REACT_APP_API_URL}/products`, {
       withCredentials: true
     })
       .then(res => {
@@ -30,12 +31,28 @@ class MallContainer extends React.Component {
       .catch(err => console.log(err))
   }
 
-  displayCategories = products => {
+  // Component did update - DO NOT SET STATE 
+
+  // displayCategories = products => {
+  //   return products.map(product => {
+  //     return (
+  //       <li>
+  //         Need to make category container/compo
+  //       </li>
+  //     )
+  //   })
+  // }
+
+  displayProducts = products => {
     return products.map(product => {
       return (
-        <li>
-          // Need to make category container/compo
-        </li>
+        <>
+          <Product 
+            productData={product}
+            setCurrentCity={this.setCurrentCity}
+            key={product.slug}
+          />
+        </>
       )
     })
   }
@@ -45,10 +62,10 @@ class MallContainer extends React.Component {
       <div>
         <h2>Shopping Mall</h2>
         <Categories setCategory={this.setCategory} />
+        {this.displayProducts(this.state.productsData)}
       </div>
     )
   }
-
 }
 
 export default MallContainer;
