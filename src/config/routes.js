@@ -10,6 +10,7 @@ import EditProfile from '../components/EditProfile/EditProfile'
 import MallContainer from '../containers/MallContainer/MallContainer'
 
 import ProductDetails from '../components/ProductDetails/ProductDetails'
+import ProductDetailsContainerNew from '../containers/ProductDetailsContainer/ProductDetailsContainer'
 
 
 

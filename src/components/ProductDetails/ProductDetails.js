@@ -17,8 +17,12 @@ import ProductDetail from '../../components/ProductDetails/ProductDetails'
 class ProductDetails extends React.Component{
   state= {
     productData: [],
+    user: {},
+    userId: localStorage.getItem('uid'),
     loaded: false,
-    productId: {"shoppingCart": [document.location.href.split('/')[4]]},
+    // productId: {"shoppingCart": [document.location.href.split('/')[4]]},
+    productId: document.location.href.split('/')[4],
+    shoppingCart: [],
   }
 
   componentDidMount() {
@@ -35,15 +39,39 @@ class ProductDetails extends React.Component{
         console.log(this.state.productData)
       })
       .catch((err) => console.log(err));
+
+    axios.get(`${process.env.REACT_APP_API_URL}/auth/${this.state.userId}`, { 
+      withCredentials: true
+    })
+      .then((res) => {
+        this.setState({
+          user: res.data.data,
+          shoppingCart: [...res.data.data.shoppingCart],
+          loaded: true
+        })
+        console.log(this.state.user)
+        console.log(this.state.shoppingCart)
+      })
+      .catch((err) => console.log(err));
+    
   };
 
   addToCart = (event) => {
     event.preventDefault();
-    const productId = document.location.href.split('/')[4];
-    // let newObj = Object.assign({}, this.state.productId).then(console.log(newObj))
-    const userId = localStorage.getItem('uid');
+    // const productId = document.location.href.split('/')[4];
+    // let newObj = Object.assign({}, document.location.href.split('/')[4])
+    // const userId = localStorage.getItem('uid');
+    // console.log(newObj)
+    this.setState({
+      shoppingCart: this.state.shoppingCart.push(this.state.productId)
+    })
+    console.log(this.state.shoppingCart)
+    let newObj = {"shoppingCart": this.state.shoppingCart}
+    console.log(newObj)
+
     
-    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, this.state.productId, {
+
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${this.state.userId}`, newObj, {
       withCredentials: true
     })
     .then((res) => {
