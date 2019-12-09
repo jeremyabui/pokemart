@@ -3,7 +3,10 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <h1>Welcome to the PokeMart</h1>
+    <>
+      <h1>Welcome to the PokeMart</h1>
+      
+    </>
   )
 }
 

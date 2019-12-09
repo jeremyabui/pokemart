@@ -40,6 +40,7 @@ class NavbarContainer extends Component {
               </>
             :
               <>
+                <Link to='/cart'><i class="fa fa-shopping-cart fa-3x " aria-hidden="true"></i></Link>
                 <NavLink className="nav-link" to="/profile"><button>Profile</button></NavLink>
                 <button onClick={this.props.logout}>Logout</button>
               </>
