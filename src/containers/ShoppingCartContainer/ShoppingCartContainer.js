@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 import ShoppingCartProduct from '../../components/ShoppingCartProduct/ShoppingCartProduct'
 
@@ -65,13 +66,43 @@ class ShoppingCartContainer extends React.Component {
     })
   }
 
+  submitOrder = (event) => {
+    event.preventDefault();
+    const userId = localStorage.getItem("uid");
+    let newOrder = {
+      "products": this.state.shoppingCart,
+      "user": userId,
+      "total": this.state.total,
+    }
+    axios.post(`${process.env.REACT_APP_API_URL}/orders`, newOrder, {
+      withCredentials: true,
+    })
+      .then((res) =>
+        console.log(res)
+      )
+      .catch((err) => console.log(err));
+    let emptiedCart = {
+      "shoppingCart": [],
+    }
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, emptiedCart, {
+      withCredentials: true
+    })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err));
+  }
+
   render() {
     return (
       <>
         <h2>Shopping Cart</h2>
         {this.displayCart(this.state.shoppingCart)}
         <h4>Total: ${this.state.total}</h4>
-        
+        {/* <Link to='/orderconfirmation' submitOrder={this.submitOrder}><button>Submit Order</button></Link> */}
+        <Link to='/orderconfirmation'>
+          <button onClick={(event) => this.submitOrder(event)}>Submit Order</button>
+        </Link>
       </>
     )
   }

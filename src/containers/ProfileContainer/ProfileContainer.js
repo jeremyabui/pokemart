@@ -26,7 +26,7 @@ class ProfileContainer extends React.Component {
   handleUpdate = (event, updatedState) => {
     event.preventDefault();
     const userId = localStorage.getItem('uid');
-    const data = new FormData();
+    // const data = new FormData();
     axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
       updatedState, 
       {

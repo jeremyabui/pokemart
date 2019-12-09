@@ -13,7 +13,7 @@ import ProductDetails from '../components/ProductDetails/ProductDetails'
 // import ProductDetailsContainerNew from '../containers/ProductDetailsContainer/ProductDetailsContainer'
 
 import ShoppingCartContainer from '../containers/ShoppingCartContainer/ShoppingCartContainer';
-
+import OrderConfirmation from '../components/OrderConfirmation/OrderConfirmation'
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
@@ -36,5 +36,6 @@ export default ({ currentUser, setCurrentUser }) => (
 
     <Route path='/cart' component={ShoppingCartContainer} />
 
+    <Route path='/orderconfirmation' component={OrderConfirmation} />
   </Switch>
 )
