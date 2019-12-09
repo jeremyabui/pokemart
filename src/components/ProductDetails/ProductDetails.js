@@ -37,6 +37,7 @@ class ProductDetails extends React.Component{
           loaded: true
         })
         console.log(this.state.productData)
+        console.log(this.props)
       })
       .catch((err) => console.log(err));
 
@@ -68,9 +69,6 @@ class ProductDetails extends React.Component{
     console.log(this.state.shoppingCart)
     let newObj = {"shoppingCart": this.state.shoppingCart}
     console.log(newObj)
-
-    
-
     axios.put(`${process.env.REACT_APP_API_URL}/auth/${this.state.userId}`, newObj, {
       withCredentials: true
     })

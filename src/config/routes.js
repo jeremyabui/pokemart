@@ -10,8 +10,9 @@ import EditProfile from '../components/EditProfile/EditProfile'
 import MallContainer from '../containers/MallContainer/MallContainer'
 
 import ProductDetails from '../components/ProductDetails/ProductDetails'
-import ProductDetailsContainerNew from '../containers/ProductDetailsContainer/ProductDetailsContainer'
+// import ProductDetailsContainerNew from '../containers/ProductDetailsContainer/ProductDetailsContainer'
 
+import ShoppingCartContainer from '../containers/ShoppingCartContainer/ShoppingCartContainer';
 
 
 export default ({ currentUser, setCurrentUser }) => (
@@ -31,7 +32,9 @@ export default ({ currentUser, setCurrentUser }) => (
 
     <Route exact path="/mall" component={MallContainer} />
 
-    <Route path='/mall/:id' component={ProductDetails} currentUser={currentUser}/>
+    <Route path='/mall/:id' component={ProductDetails} />
+
+    <Route path='/cart' component={ShoppingCartContainer} />
 
   </Switch>
 )
