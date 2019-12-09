@@ -40,27 +40,37 @@ class ShoppingCartContainer extends React.Component {
   // removeFromCart = (event, updatedState) => {
   removeFromCart = (event) => {
     event.preventDefault();
-    console.log(event)
+    // console.log(event.target.id)
+    // console.log(this.state.shoppingCart)
+    let productIndex = event.target.id
     const userId = localStorage.getItem("uid");
-    // axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
-    // updatedState,
-    // {
-    //   withCredentials: true
-    // })
-    //   .then(res => {
-    //     console.log(res)
-    //   })
+    this.state.shoppingCart.splice(productIndex,1)
+    let updatedCartObj = {"shoppingCart": this.state.shoppingCart}
+    axios.put(`${process.env.REACT_APP_API_URL}/auth/${userId}`, 
+    updatedCartObj,
+    {
+      withCredentials: true
+    })
+      .then(res => {
+        // console.log(res)
+        this.calculateTotal(this.state.shoppingCart)
+      })
+      .catch((err) => console.log(err))
   }
 
   displayCart = products => {
-    return products.map(product => {
+    return products.map((product,index) => {
+      console.log(product)
+      console.log(index)
       return (
         <>
           <ShoppingCartProduct
             productData={product}
             removeFromCart={this.removeFromCart}
             key={product.slug}
+            index={index}
           />
+          {/* <button onClick>New remove</button>  */}
         </>
       )
     })

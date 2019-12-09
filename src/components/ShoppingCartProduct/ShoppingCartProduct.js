@@ -9,7 +9,7 @@ class ShoppingCartProduct extends React.Component{
         <p>Product Name: {this.props.productData.name}</p>
         <p>Price: ${this.props.productData.price}</p>
         {/* NOTE Added onClick method */}
-        <button onClick={(event) => this.props.removeFromCart(event)}>Remove from Cart</button>
+        <button onClick={(event) => this.props.removeFromCart(event)} id={this.props.index}>Remove from Cart</button>
       </div>
     )
   }

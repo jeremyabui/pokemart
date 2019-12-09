@@ -9,10 +9,6 @@ class Categories extends React.Component {
         <h3 className='categories' id='medicine' onClick={this.props.setCategory}>Medicine</h3>
       </>
 
-      // <>
-        
-      // </>
-
     )
   }
 }

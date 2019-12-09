@@ -46,9 +46,7 @@ class NavbarContainer extends Component {
               </>
             }
           </Nav>
-    
         </Navbar>
-        <br />
       </header>
     );
   };
