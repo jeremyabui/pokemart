@@ -15,15 +15,16 @@ class Profile extends React.Component {
     return (
       <>
         <div className="profileInfo">
-          <h3>Reached profile where details should post</h3>
-          <h3> Welcome {this.props.profile.name}</h3>
+          <h3> Welcome {this.props.profile.name}!</h3>
           <h5>Name: {this.props.profile.name}</h5>
           <h5>Address: {this.props.profile.address}</h5>
           <h5>City: {this.props.profile.city}</h5>
           <h5>State: {this.props.profile.state}</h5>
           <h5>Zipcode: {this.props.profile.zipcode}</h5>
-          <Link to='/editprofile'>Edit Profile</Link>
-          <DeleteUser logout={this.props.logout}/>
+          <div className='profileButtons'>
+            <Link to='/editprofile'><button className='btn btn-warning editProfileButton'>Edit Profile</button></Link>
+            <DeleteUser logout={this.props.logout}/>
+          </div>
         </div>
       </>
     )

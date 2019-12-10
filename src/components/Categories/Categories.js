@@ -6,9 +6,9 @@ class Categories extends React.Component {
     return (
       // Hardcoded
       <>
-      <h3>Categories</h3>
-        <h4 className='categories' id='pokeballs' onClick={this.props.setCategory}>Pokeballs</h4>
-        <h4 className='categories' id='medicine' onClick={this.props.setCategory}>Medicine</h4>
+      <h4><u>Categories</u></h4>
+        <h5 className='categories' id='pokeballs' onClick={this.props.setCategory}>Pokeballs</h5>
+        <h5 className='categories' id='medicine' onClick={this.props.setCategory}>Medicine</h5>
       </>
 
     )

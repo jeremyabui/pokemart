@@ -22,11 +22,11 @@ class NavbarContainer extends Component {
       <header>
 
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href='/' >PokeMart</Navbar.Brand>
-          <Form inline>
+          <Navbar.Brand href='/mall' className='navTitle'>PokeMart</Navbar.Brand>
+          {/* <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-info">Search</Button>
-          </Form>
+          </Form> */}
 
           <Nav className="ml-auto">
             {/* <Nav.Link href="#home">Home</Nav.Link> */}

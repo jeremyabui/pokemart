@@ -62,7 +62,7 @@ class MallContainer extends React.Component {
   render() {
     return (
       <div>
-        <h2>Shopping Mall</h2>
+        <h2 className='mallHeader'>Shopping Mall</h2>
         <div className='mallContainer'>
           <div className='sidenav'>
             <Categories setCategory={this.setCategory} />

@@ -12,7 +12,7 @@ function DeleteUserModal(props) {
 
   return(
     <>
-      <Button className='deleteUserModal' variant="warning" onClick={handleShow}>
+      <Button className='deleteUserModal' variant="danger" onClick={handleShow}>
         Delete Account
       </Button>
 

@@ -86,7 +86,7 @@ class ProductDetails extends React.Component{
         {/* <h2>Product Details page</h2>  */}
         <h3>{this.state.productData.name}</h3> 
         <div className='productDetailContentContainer'>
-          <img src={this.state.productData.image} />
+          <img src={this.state.productData.image} className='productDetailImage'/>
           <div className='productDetailText'>
             <p>{this.state.productData.description}</p>
             <p>Price: ${this.state.productData.price}</p>
