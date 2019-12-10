@@ -14,7 +14,8 @@ function RegisterModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className='registerModal navButton'>
+      {/* <Button className='navButton' onClick={handleShow}> */}
         Register
       </Button>
 

@@ -23,7 +23,8 @@
 
 /* Home CSS */
 .backgroundContainer {
-  background-image: url('https://3.bp.blogspot.com/-P_Q45zLQQsY/UTIV6oRF_fI/AAAAAAAABjQ/XH-bNz5Sh8I/s1600/Centro+Pok%C3%A9mon.png');
+  /* background-image: url('https://3.bp.blogspot.com/-P_Q45zLQQsY/UTIV6oRF_fI/AAAAAAAABjQ/XH-bNz5Sh8I/s1600/Centro+Pok%C3%A9mon.png'); */
+  background-image: url('https://i.imgur.com/szfEvMq.jpg');
   background-size: cover;
   height: 500px;
   /* width: 100%; */
@@ -56,6 +57,35 @@
   margin-right: 10px;
 }
 
+.navButton {
+  color: #17a2b8;
+  border-color: #17a2b8;
+  display: inline-block;
+  font-weight: 400;
+  /* user-select: none; */
+  background-color: transparent;
+  border: 1px solid #17a2b8;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s;
+  height: 38px;
+}
+
+.navButton:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.logoutButton {
+  margin: 8px 0 8px 0;
+}
+
+.cartIcon {
+  color: #17a2b8;
+}
+
 /* Mall CSS */
 .sidenav {
   /* height: auto; */
@@ -81,8 +111,66 @@
   
 }
 
-/* Product Details */
 .card {
   margin: 10px;
   padding: 10px;
+}
+
+/* Product Details */
+.productDetailContainer {
+  height: 80vh;
+  width: 50vw;
+  border: 1px solid black;
+  box-shadow: 5px 10px 8px #888888;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 25px;
+}
+
+.productDetailContentContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+}
+
+.productDetailText {
+  margin: 0 auto;
+}
+
+/* Shopping Cart */
+.shoppingCartContainer {
+  margin-left: 20px;
+}
+
+.shoppingCartProductContainer {
+  border: 1px solid black;
+  /* margin-left: 20px; */
+  width: 700px;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shoppingCartHeader {
+  margin-bottom: 30px;
+}
+
+.shoppingCartProductImage {
+  height: 100px; 
+  margin: 25px;
+}
+
+.shoppingCartProductText {
+  line-height: 1;
+  height: 100px;
+  margin: 25px;
+}
+
+.removeFromCart {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+.removeFromCart:hover {
+  cursr: pointer;
 }

@@ -82,16 +82,21 @@ class ProductDetails extends React.Component{
 
   render() {
     return (
-      <div className='container'>
-        <h2>Product Details page</h2> 
+      <div className='productDetailContainer'>
+        {/* <h2>Product Details page</h2>  */}
         <h3>{this.state.productData.name}</h3> 
-        <img src={this.state.productData.image} />
-        <p>{this.state.productData.description}</p>
-        <p>${this.state.productData.price}</p>
-        <Link to='/cart'>
-          {/* <button onClick={(event) => {this.addToCart(event); this.props.history.push('/cart')} }>Add to Cart</button> */}
-          <button onClick={(event) => this.addToCart(event) }>Add to Cart</button>
-        </Link>
+        <div className='productDetailContentContainer'>
+          <img src={this.state.productData.image} />
+          <div className='productDetailText'>
+            <p>{this.state.productData.description}</p>
+            <p>Price: ${this.state.productData.price}</p>
+            <button className='addToCartButton' onClick={(event) => {this.addToCart(event); this.props.history.push('/cart')}} className='btn btn-primary' >Add to Cart</button>
+
+          </div>
+        </div>
+        {/* <Link to='/cart'> */}
+          {/* <button onClick={(event) => this.addToCart(event) }>Add to Cart</button> */}
+        {/* </Link> */}
     {/* {this.state.productData && <ProductDetail productData={this.state.productData} /> } */}
       </div>
     )

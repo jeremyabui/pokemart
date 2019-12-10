@@ -112,15 +112,16 @@ class ShoppingCartContainer extends React.Component {
 
   render() {
     return (
-      <>
-        <h2>Shopping Cart</h2>
+      <div className='shoppingCartContainer'>
+        <h2 className='shoppingCartHeader'>Shopping Cart</h2>
         {this.displayCart(this.state.shoppingCart)}
+        <hr></hr>
         <h4>Total: ${this.state.total}</h4>
         {/* <Link to='/orderconfirmation' submitOrder={this.submitOrder}><button>Submit Order</button></Link> */}
         {/* <Link to='/orderconfirmation'> */}
-          <button onClick={(event) => {this.submitOrder(event); this.props.history.push('/orderconfirmation')}}>Submit Order</button>
+          <button onClick={(event) => {this.submitOrder(event); this.props.history.push('/orderconfirmation')}} className='btn btn-primary'>Submit Order</button>
         {/* </Link> */}
-      </>
+      </div>
     )
   }
 }
