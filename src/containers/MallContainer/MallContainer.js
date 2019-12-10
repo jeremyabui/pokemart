@@ -4,7 +4,7 @@ import axios from 'axios';
 import Categories from '../../components/Categories/Categories'
 import Product from '../../components/Product/Product';
 
-import './MallContainer.css'
+// import './MallContainer.css'
 
 class MallContainer extends React.Component {
   state = {
@@ -63,7 +63,7 @@ class MallContainer extends React.Component {
     return (
       <div>
         <h2>Shopping Mall</h2>
-        <div className='container'>
+        <div className='mallContainer'>
           <div className='sidenav'>
             <Categories setCategory={this.setCategory} />
           </div>

@@ -11,7 +11,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import ProfileContainer from '../../containers/ProfileContainer/ProfileContainer'
 // CSS
-import './Navbar.css'
+// import './Navbar.css'
 
 // NOTE uncomment out once set up
 class NavbarContainer extends Component {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './Product.css'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 class Product extends React.Component {
   render() {
@@ -27,10 +28,11 @@ class Product extends React.Component {
           <Card.Body>
             <Card.Title>{this.props.productData.name}</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Price: ${this.props.productData.price}
             </Card.Text>
-            {/* <Button variant="primary">Go somewhere</Button> */}
+            <Link to={'/mall/'+ this.props.productData._id}>
+              <Button variant="primary">View Details</Button>
+            </Link>
           </Card.Body>
         </Card>
       </>
