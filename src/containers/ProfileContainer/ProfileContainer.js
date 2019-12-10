@@ -45,7 +45,7 @@ class ProfileContainer extends React.Component {
       <>
       <div className='profile-container'>
         <h2>Profile</h2>
-        <Profile profile={this.state.profile} />
+        <Profile profile={this.state.profile} logout={this.props.logout}/>
       </div>
       </>
     )

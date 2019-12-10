@@ -11,6 +11,8 @@
 
 import React from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import ProductDetail from '../../components/ProductDetails/ProductDetails'
 
@@ -86,8 +88,10 @@ class ProductDetails extends React.Component{
         <img src={this.state.productData.image} />
         <p>{this.state.productData.description}</p>
         <p>${this.state.productData.price}</p>
-        <button onClick={(event) => this.addToCart(event) }>Add to Cart</button>
-        
+        <Link to='/cart'>
+          {/* <button onClick={(event) => {this.addToCart(event); this.props.history.push('/cart')} }>Add to Cart</button> */}
+          <button onClick={(event) => this.addToCart(event) }>Add to Cart</button>
+        </Link>
     {/* {this.state.productData && <ProductDetail productData={this.state.productData} /> } */}
       </div>
     )
@@ -95,4 +99,4 @@ class ProductDetails extends React.Component{
 }
 
 
-export default ProductDetails;
+export default withRouter(ProductDetails);

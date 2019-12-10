@@ -11,6 +11,7 @@ class DeleteUser extends React.Component {
     axios.delete(`${process.env.REACT_APP_API_URL}/auth/${userId}`, { withCredentials: true})
       .then((res) => {
         console.log(res)
+        this.props.logout()
         this.props.history.push('/')
         // this.props.logout()
       })

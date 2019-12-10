@@ -36,7 +36,7 @@ class NavbarContainer extends Component {
             {!this.props.currentUser ? 
               <>
                 <Login currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
-                <Register />
+                <Register currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
               </>
             :
               <>

@@ -15,10 +15,15 @@ import ProductDetails from '../components/ProductDetails/ProductDetails'
 import ShoppingCartContainer from '../containers/ShoppingCartContainer/ShoppingCartContainer';
 import OrderConfirmation from '../components/OrderConfirmation/OrderConfirmation'
 
-export default ({ currentUser, setCurrentUser }) => (
+export default ({ currentUser, setCurrentUser, logout }) => (
   <Switch>
     <Route exact path='/' component={Home} />
-    <Route path="/register" component={Register} />
+    <Route 
+      path="/register" 
+      render={() => (
+        <Register currentUser={currentUser} setCurrentUser={setCurrentUser}/> 
+      )}
+    />
     <Route
       path="/login"
       render={() => (
@@ -26,8 +31,13 @@ export default ({ currentUser, setCurrentUser }) => (
       )}
     />
     
-    <Route path="/profile" component={ProfileContainer} />
-    <Route path="/editprofile" component={EditProfile} />
+    <Route 
+      path="/profile" 
+      render={() => (
+        <ProfileContainer logout={logout}/>
+      )}
+      />
+    <Route path="/editprofile" component={EditProfile}  />
 
 
     <Route exact path="/mall" component={MallContainer} />

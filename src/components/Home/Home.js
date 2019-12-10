@@ -24,7 +24,7 @@ const Home = () => {
         <div className='bannerContent'>
           <h1 className='bannerText'>Welcome to the Pokemart</h1> 
           <Link to='/mall'>
-            <button>Shop Now</button>
+            <button className='shopNowButton btn btn-danger'>Shop Now</button>
           </Link>
         </div>
       </div>

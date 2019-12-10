@@ -1,0 +1,22 @@
+.sidenav {
+  /* height: auto; */
+  width: 160px; /* Set the width of the sidebar */
+  /* position: fixed;  */
+  /* z-index: ;  */
+  top: 0; 
+  left: 0;
+  background-color: #111; /* Black */
+  /* overflow-x: hidden;  */
+  padding-top: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.productList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+}

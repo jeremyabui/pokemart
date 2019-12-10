@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 // React bootstrap imports
 import Button from 'react-bootstrap/Button'
@@ -59,7 +60,10 @@ function RegisterModal(props) {
                 <label htmlFor="zipcode">Zipcode</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="zipcode" name="zipcode" value={props.user.zipcode} />
               </div> */}
-              <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button>
+              {/* <Link to='/mall'> */}
+                {/* <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button> */}
+                <button id="register-button" className="btn btn-primary" type="submit">Register</button>
+              {/* </Link> */}
             </form>
           </div>
         </div>
