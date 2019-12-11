@@ -1,5 +1,3 @@
-A link to your hosted working app. A paragraph-long description (elevator pitch) of your project. A list of the technologies used. A list of installation steps for the app itself and any dependencies - how would another developer run your site locally? Link to your user stories - who are your users, what do they want, and why? Link to your wireframes – sketches of major views / interfaces in your application. Link to your entity relationship diagrams – plan out your data relationships before coding. Descriptions of any unsolved problems or future features.
-
 Project Link pokemartecommercefrontend.herokuapp.com
 
 Description: For this project, I created an e-commerce website with fake items to mimic a real-world application. In this project, users are able to create accounts, shop, view product details, add items to their cart, and submit their order. My goal of this project was to create an React application that is also scalable.
