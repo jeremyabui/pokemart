@@ -88,8 +88,8 @@ class ProductDetails extends React.Component{
         <div className='productDetailContentContainer'>
           <img src={this.state.productData.image} className='productDetailImage'/>
           <div className='productDetailText'>
-            <p>{this.state.productData.description}</p>
-            <p>Price: ${this.state.productData.price}</p>
+            <p><b>Description:</b> {this.state.productData.description}</p>
+            <p><b>Price:</b> ${this.state.productData.price}</p>
             <button className='addToCartButton' onClick={(event) => {this.addToCart(event); this.props.history.push('/cart')}} className='btn btn-primary' >Add to Cart</button>
 
           </div>
