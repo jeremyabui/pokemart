@@ -203,7 +203,7 @@ body {
 }
 
 .removeFromCart:hover {
-  cursr: pointer;
+  cursor: pointer;
 }
 
 /* Profile */
