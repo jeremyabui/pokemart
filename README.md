@@ -1,5 +1,5 @@
 Project Link:
-pokemartecommercefrontend.herokuapp.com
+https://pokemartecommercefrontend.herokuapp.com
 
 Description: 
 For this project, I created an e-commerce website with fake items to mimic a real-world application. In this project, users are able to create accounts, shop, view product details, add items to their cart, and submit their order. My goal of this project was to create an React application that is also scalable.
