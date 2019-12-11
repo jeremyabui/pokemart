@@ -76,6 +76,7 @@ class ProductDetails extends React.Component{
     })
     .then((res) => {
       console.log(res)
+      this.props.history.push('/cart')
     })
     .catch((err) => console.log(err));
   }
@@ -86,12 +87,11 @@ class ProductDetails extends React.Component{
         {/* <h2>Product Details page</h2>  */}
         <h3>{this.state.productData.name}</h3> 
         <div className='productDetailContentContainer'>
-          <img src={this.state.productData.image} className='productDetailImage'/>
-          <div className='productDetailText'>
-            <p><b>Description:</b> {this.state.productData.description}</p>
-            <p><b>Price:</b> ${this.state.productData.price}</p>
-            <button className='addToCartButton' onClick={(event) => {this.addToCart(event); this.props.history.push('/cart')}} className='btn btn-primary' >Add to Cart</button>
-
+            <img src={this.state.productData.image} className='productDetailImage col'/>
+            <div className='productDetailText col'>
+              <p><b>Description:</b> {this.state.productData.description}</p>
+              <p><b>Price:</b> ${this.state.productData.price}</p>
+              <button className='addToCartButton' onClick={(event) => this.addToCart(event)} className='btn btn-primary' >Add to Cart</button>
           </div>
         </div>
         {/* <Link to='/cart'> */}
